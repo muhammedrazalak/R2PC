@@ -1,0 +1,6 @@
+.env
+.venv
+__pycache__
+collection
+.DS_Store
+node_modules

@@ -1,4 +1,4 @@
-# Express Route to Postman Collection Backend (Gemini-powered)
+# Express Route to Postman Collection Backend (OpenAI-powered)
 
 ## Setup
 
@@ -7,12 +7,12 @@ cd server
 pip install -r requirements.txt
 ```
 
-### Set your Gemini API key
+### Set your OpenAI API key
 
-Export your Google Gemini API key (get it from Google AI Studio):
+Export your OpenAI API key (get it from https://platform.openai.com):
 
 ```bash
-export GEMINI_API_KEY=AIzaSyB6wYMBqTHaOP2VIE6Uodn18HLsb7wQVuk
+export OPENAI_API_KEY=sk-...
 ```
 
 ## Run
@@ -38,7 +38,8 @@ uvicorn main:app --reload
 ## How it works
 - Clones the repo
 - Loads relevant Express files (controllers, routes, app.js, DTOs)
-- Sends code to Gemini API to extract endpoints
+- Sends code to OpenAI (gpt-3.5-turbo) to extract endpoints
+- **Organizes endpoints in the Postman collection so each controller file is a folder containing its endpoints**
 - Builds a valid Postman v2.1 collection
 - Returns the file for download 
 

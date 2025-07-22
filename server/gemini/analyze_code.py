@@ -2,10 +2,12 @@ import os
 import google.generativeai as genai
 from typing import List, Dict
 import json
+from dotenv import load_dotenv
 
+load_dotenv('.env')
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-print(os.getenv("GEMINI_API_KEY"))
+print("here",os.getenv("GEMINI_API_KEY"))
 
 SYSTEM_PROMPT = (
     "Given the following Express.js project files, extract all HTTP endpoints (method, path, sample request body if available) "

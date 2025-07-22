@@ -4,4 +4,5 @@ gitpython
 aiofiles
 pydantic
 google-generativeai
-httpx 
+httpx
+openai 
