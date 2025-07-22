@@ -5,10 +5,9 @@ import json
 from dotenv import load_dotenv
 
 load_dotenv('.env')
-
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-print(os.getenv("GEMINI_API_KEY"))
+print("here",os.getenv("GEMINI_API_KEY"))
 
 SYSTEM_PROMPT = ("""
     Given the following Express.js project files, your task is to extract all HTTP endpoints and organize them into a structured Postman collection format.
