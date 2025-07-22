@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "Express API Collection (Gemini)",
+    "name": "API Collection",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -13,25 +13,16 @@
             "method": "POST",
             "header": [],
             "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "email",
-                  "value": "",
-                  "type": "text"
-                },
-                {
-                  "key": "password",
-                  "value": "",
-                  "type": "password"
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
                 }
-              ]
+              }
             },
             "url": {
               "raw": "{{base_url}}/login",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "login"
               ]
@@ -47,12 +38,7 @@
           "name": "Upload Resume",
           "request": {
             "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "multipart/form-data"
-              }
-            ],
+            "header": [],
             "body": {
               "mode": "formdata",
               "formdata": [
@@ -65,25 +51,32 @@
             },
             "url": {
               "raw": "{{base_url}}/resume",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
                 "resume"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Download Resume",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
               "raw": "{{base_url}}/resume/:id",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
                 "resume",
                 ":id"
               ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -97,13 +90,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"// Add CreateReferralDto properties here\"\n}"
+              "raw": "{\n  \"referrerId\": 1,\n  \"candidateId\": 2,\n  \"jobId\": 3,\n  \"referralDate\": \"2024-03-08\",\n  \"status\": \"pending\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 ""
               ]
@@ -116,13 +111,11 @@
             "method": "GET",
             "header": [],
             "body": {
-              "mode": "raw"
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{base_url}}/",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 ""
               ]
@@ -134,14 +127,8 @@
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "{{id}}"
               ]
@@ -153,14 +140,8 @@
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/response/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "response",
                 "{{id}}"
@@ -173,14 +154,8 @@
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/employee/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "employee",
                 "{{id}}"
@@ -195,13 +170,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"status\": \"// Update status here\"\n}"
+              "raw": "{\n  \"status\": \"accepted\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "{{id}}"
               ]
@@ -215,13 +192,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"joiningDate\": \"YYYY-MM-DD\"\n}"
+              "raw": "{\n  \"joiningDate\": \"2024-03-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/{{id}}/convert",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "{{id}}",
                 "convert"
@@ -236,7 +215,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"referrerId\": 0,\n  \"referred\": {\n    \"person\": {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"email\": \"string\",\n      \"phone\": \"string\"\n    },\n    \"yearsOfExperience\": 0\n  },\n  \"jobPostingId\": 0,\n  \"resumeId\": 0\n}",
+              "raw": "{\n  \"referrerId\": 1,\n  \"referred\": {\n    \"person\": {\n      \"firstName\": \"Jane\",\n      \"lastName\": \"Doe\",\n      \"email\": \"jane.doe@example.com\",\n      \"phoneNumber\": \"987-654-3210\"\n    },\n    \"yearsOfExperience\": 3\n  },\n  \"jobPostingId\": 1,\n  \"resumeId\": 1\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -245,6 +224,7 @@
             },
             "url": {
               "raw": "{{base_url}}/api/referrals",
+              "host": "{{base_url}}",
               "path": [
                 "api",
                 "referrals"
@@ -262,14 +242,8 @@
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/referral/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "referral",
                 "{{id}}"
@@ -282,14 +256,8 @@
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/person/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "person",
                 "{{id}}"
@@ -302,14 +270,8 @@
           "request": {
             "method": "PATCH",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/{{id}}/read",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "{{id}}",
                 "read"
@@ -324,13 +286,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"// Add Notification properties here\"\n}"
+              "raw": "{\n  \"title\":\"Updated Title\",\n  \"content\":\"Updated Content\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "{{id}}"
               ]
@@ -344,13 +308,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Notification Title\",\n  \"content\": \"Notification Content\"\n}"
+              "raw": "{\n  \"title\": \"Important Announcement\",\n  \"content\": \"Urgent information for all admins\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/notify/admins",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "notify",
                 "admins"
@@ -365,13 +331,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Notification Title\",\n  \"content\": \"Notification Content\",\n  \"recipient_id\": 1,\n  \"referral_id\": 1\n}"
+              "raw": "{\n  \"title\": \"Referral Update\",\n  \"content\": \"New referral received\",\n  \"recipient_id\": 1,\n  \"referral_id\": 123\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/notify/person",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "notify",
                 "person"
@@ -389,14 +357,8 @@
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 ""
               ]
@@ -408,14 +370,8 @@
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw"
-            },
             "url": {
               "raw": "{{base_url}}/employee/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "employee",
                 "{{id}}"
@@ -430,13 +386,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"status\": \"// Update status here\"\n}"
+              "raw": "{\n  \"status\": \"paid\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/{{id}}",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 "{{id}}"
               ]
@@ -455,13 +413,15 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"test@example.com\"\n}"
+              "raw": "{\n  \"email\": \"test@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{base_url}}/",
-              "host": [
-                "{{base_url}}"
-              ],
               "path": [
                 ""
               ]
@@ -472,14 +432,7 @@
           "name": "Create Person",
           "request": {
             "method": "POST",
-            "url": {
-              "raw": "{{base_url}}/api/persons",
-              "path": [
-                "api",
-                "persons"
-              ],
-              "query": []
-            },
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"name\": \"John Doe\",\n  \"phone\": \"123-456-7890\",\n  \"email\": \"john.doe@example.com\"\n}",
@@ -489,7 +442,16 @@
                 }
               }
             },
-            "header": []
+            "url": {
+              "raw": "{{base_url}}/api/person",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "person"
+              ]
+            }
           }
         }
       ]
@@ -501,110 +463,131 @@
           "name": "Create Job Posting",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Software Engineer\",\n  \"description\": \"We are looking for a talented Software Engineer to join our team\",\n  \"location\": \"Remote\",\n  \"salary\": 100000\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"title\": \"Software Engineer\",\n  \"description\": \"Experienced software engineer needed\",\n  \"location\": \"New York\"\n}"
             },
             "url": {
-              "raw": "{{base_url}}/jobpostings",
+              "raw": "{{base_url}}/jobposting",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
-                "jobpostings"
+                "jobposting"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Get All Job Postings",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
-              "raw": "{{base_url}}/jobpostings",
+              "raw": "{{base_url}}/jobposting",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
-                "jobpostings"
+                "jobposting"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Get Job Posting By ID",
           "request": {
             "method": "GET",
-            "header": [],
             "url": {
-              "raw": "{{base_url}}/jobpostings/:id",
+              "raw": "{{base_url}}/jobposting/:id",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
-                "jobpostings",
+                "jobposting",
                 ":id"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Update Job Posting",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Updated Title\",\n  \"description\": \"Updated description\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"title\": \"Updated Title\",\n  \"description\": \"Updated Description\"\n}"
             },
             "url": {
-              "raw": "{{base_url}}/jobpostings/:id",
+              "raw": "{{base_url}}/jobposting/:id",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
-                "jobpostings",
+                "jobposting",
                 ":id"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Patch Job Posting",
           "request": {
             "method": "PATCH",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Patched Title\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
+              "raw": "{\n  \"title\": \"Updated Title\"\n}"
             },
             "url": {
-              "raw": "{{base_url}}/jobpostings/:id",
+              "raw": "{{base_url}}/jobposting/:id",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
-                "jobpostings",
+                "jobposting",
                 ":id"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Delete Job Posting",
           "request": {
             "method": "DELETE",
-            "header": [],
             "url": {
-              "raw": "{{base_url}}/jobpostings/:id",
+              "raw": "{{base_url}}/jobposting/:id",
+              "host": [
+                "{{base_url}}"
+              ],
               "path": [
-                "jobpostings",
+                "jobposting",
                 ":id"
               ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Create Job Posting",
@@ -613,7 +596,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"skills\": \"string\",\n  \"location\": \"string\",\n  \"numOfPositions\": 0,\n  \"experience\": 0,\n  \"salary\": 0,\n  \"bonusForReferral\": 0\n}",
+              "raw": "{\n  \"title\": \"Software Engineer\",\n  \"description\": \"Experienced Software Engineer needed\",\n  \"skills\": \"JavaScript, React, Node.js\",\n  \"location\": \"Remote\",\n  \"numOfPositions\": 2,\n  \"experience\": 5,\n  \"salary\": 100000,\n  \"bonusForReferral\": 1000\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -621,10 +604,11 @@
               }
             },
             "url": {
-              "raw": "{{base_url}}/api/jobPostings",
+              "raw": "{{base_url}}/api/jobpostings",
+              "host": "{{base_url}}",
               "path": [
                 "api",
-                "jobPostings"
+                "jobpostings"
               ]
             }
           }
@@ -633,25 +617,27 @@
           "name": "Update Job Posting",
           "request": {
             "method": "PUT",
-            "url": {
-              "raw": "{{base_url}}/api/jobpostings/:id",
-              "path": [
-                "api",
-                "jobpostings",
-                ":id"
-              ],
-              "query": []
-            },
+            "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Software Engineer\",\n  \"description\": \"Experienced Software Engineer needed\",\n  \"skills\": \"Java, Spring, React\",\n  \"location\": \"Remote\",\n  \"numOfPositions\": 2,\n  \"filledPositions\": 1,\n  \"experience\": 5,\n  \"salary\": 100000,\n  \"bonusForReferral\": 1000\n}",
+              "raw": "{\n  \"title\": \"Software Engineer\",\n  \"description\": \"Experienced Software Engineer needed\",\n  \"skills\": \"JavaScript, React, Node.js\",\n  \"location\": \"Remote\",\n  \"numOfPositions\": 2,\n  \"filledPositions\": 1,\n  \"experience\": 3,\n  \"salary\": 100000,\n  \"bonusForReferral\": 1000\n}",
               "options": {
                 "raw": {
                   "language": "json"
                 }
               }
             },
-            "header": []
+            "url": {
+              "raw": "{{base_url}}/api/jobposting/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "jobposting",
+                "1"
+              ]
+            }
           }
         }
       ]
@@ -686,7 +672,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"person\": {\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"email\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"yearsOfExperience\": 0\n}",
+              "raw": "{\n  \"person\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phoneNumber\": \"123-456-7890\"\n  },\n  \"yearsOfExperience\": 5\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -695,6 +681,7 @@
             },
             "url": {
               "raw": "{{base_url}}/api/candidates",
+              "host": "{{base_url}}",
               "path": [
                 "api",
                 "candidates"

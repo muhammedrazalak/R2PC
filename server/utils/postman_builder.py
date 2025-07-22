@@ -4,7 +4,7 @@ from typing import List, Dict
 def build_postman_collection(items: List[Dict], output_path: str):
     collection = {
         "info": {
-            "name": "Express API Collection (Gemini)",
+            "name": "API Collection",
             "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
         },
         "item": items

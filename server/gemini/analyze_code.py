@@ -21,8 +21,16 @@ SYSTEM_PROMPT = ("""
     6.  **Use `{{base_url}}`:** Prepend `{{base_url}}` to all endpoint paths in the Postman collection.
     7.  **No Empty Folders:** Ensure every folder contains at least one endpoint.
     8.  **Consolidate Folders:** Do not create duplicate folders. All endpoints for a given route (e.g., "user") must be in a single "user" folder.
-    9.  **Complete api urls:** Ensure that all endpoints are fully qualified with their base URL and path.
+    9.  **Complete api urls:** Ensure that all endpoints are fully qualified with their base URL and path.(Important)
     10. **Consistent Casing:** Use consistent (e.g., lowercase) naming for all folder names to avoid duplicates.
+                 
+    assign a default value to base url like this: eg:
+    "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    }
+  ],
     """
 )
 
